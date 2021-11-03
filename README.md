@@ -1,2 +1,2 @@
-# polyhedra-viewer
+# Polyhedra Viewer
 A simple polyhedra viewer with Three.js
