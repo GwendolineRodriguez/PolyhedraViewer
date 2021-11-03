@@ -1,0 +1,10 @@
+:root {
+  --accent-color: #5859ff;
+  --background-color: white;
+  --text-color: #2f3030;
+  --text-btn-color: white;
+}
+
+.polyhedronIcon {
+  filter: invert(1);
+}

@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+:root {
+  color-scheme: light dark;
+  --secondary-color: #42c996;
+  --dark-color: #2f3030;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+body {
+  display: grid;
+  background-color: var(--background-color);
+  padding: 2em 0;
+}
+
+.btn {
+  font-size: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 2em;
+}
+.btn:focus,
+.btn:hover,
+.active {
+  box-shadow: 0 0.5em 3em var(--accent-color);
+}
+
+.shapeBtn {
+  font-weight: 900;
+  max-width: 15em;
+  height: 3em;
+  color: var(--text-btn-color);
+  border-radius: 2em;
+  background-color: var(--accent-color);
+}
+
+#polyhedronButtons {
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 1em;
+  max-width: 100%;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  justify-self: end;
+  margin: 0 1em;
+  width: 3.75em;
+  height: 2.125em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.185em 0.46em;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.625em;
+  width: 1.625em;
+  left: 0.25em;
+  bottom: 0.25em;
+  background-color: white;
+  background-image: "r";
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #525454;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 0.0625em #525454;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.625em);
+  -ms-transform: translateX(1.625em);
+  transform: translateX(1.625em);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 2.125em;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.polyhedronIcon {
+  display: none;
+}
+
+@media screen and (max-width: 790px) {
+  .btn {
+    padding: 0.5em;
+  }
+
+  .shapeBtn {
+    height: 5em;
+    border-radius: 3em;
+  }
+
+  .polyhedronText {
+    display: none;
+  }
+  .polyhedronIcon {
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .btn {
+    padding: 0.5em;
+  }
+
+  .shapeBtn {
+    height: 4em;
+    border-radius: 3em;
+  }
+
+  .polyhedronText {
+    display: none;
+  }
+  .polyhedronIcon {
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+  }
+}

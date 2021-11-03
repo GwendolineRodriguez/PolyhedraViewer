@@ -1,0 +1,15 @@
+{
+  "name": "polyhedra-viewer",
+  "source": "src/index.html",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  },
+  "dependencies": {
+    "three": "^0.134.0"
+  }
+}

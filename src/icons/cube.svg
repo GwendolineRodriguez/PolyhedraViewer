@@ -1,0 +1,6 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="17.8477" height="18.1582" rx="1" transform="matrix(0.85634 -0.516412 0.85634 0.516412 8 32.6086)" stroke="black" stroke-width="2" stroke-linejoin="bevel"/>
+<rect width="17.6888" height="18.158" rx="1" transform="matrix(0.85634 -0.516412 0.85634 0.516412 8.02957 14.1347)" stroke="black" stroke-width="2" stroke-linejoin="bevel"/>
+<rect width="17.7935" height="18.4188" rx="1" transform="matrix(0.85634 -0.516412 2.10918e-08 1 23.5564 23.5754)" stroke="black" stroke-width="2" stroke-linejoin="bevel"/>
+<path d="M8 15.134C8 14.5817 8.3834 14.3652 8.85634 14.6504L22.6397 22.9624C23.1126 23.2476 23.496 23.9265 23.496 24.4788L23.496 41C23.496 41.5523 23.1126 41.7688 22.6397 41.4836L8.85634 33.1716C8.3834 32.8864 8 32.2075 8 31.6552L8 15.134Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)"
+          content="white" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)"
+          content="#2f3030" />
+    <title>Polyhedron Generator</title>
+    <link rel="stylesheet" href="./styles/dark.css"
+          media="(prefers-color-scheme: dark)" />
+    <link rel="stylesheet" href="./styles/light.css"
+          media="(prefers-color-scheme: light)" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.module.js" type="module"></script>
+  </head>
+
+  <body>
+    <label class="switch">
+      <input tabindex="0" id="themeToggler" type="checkbox">
+      <span class="slider round">
+        <pre>🌙 🌞</pre>
+      </span>
+    </label>
+    <section id="canva"></section>
+    <section id="polyhedronButtons">
+      <button id="tetrahedron" class="btn shapeBtn">
+        <img class="polyhedronIcon" src="icons/tetrahedron.svg"
+             alt="tetrahedron">
+        <span class="polyhedronText">Tetrahedron</span>
+      </button>
+      <button id="cube" class="btn shapeBtn">
+        <img class="polyhedronIcon" src="icons/cube.svg" alt="cube">
+        <span class="polyhedronText">Cube</span>
+      </button>
+      <button id="octahedron" class="btn shapeBtn">
+        <img class="polyhedronIcon" src="icons/octahedron.svg" alt="octahedron">
+        <span class="polyhedronText">Octahedron</span>
+      </button>
+      <button id="dodecahedron" class="btn shapeBtn">
+        <img class="polyhedronIcon" src="icons/dodecahedron.svg"
+             alt="dodecahedron">
+        <span class="polyhedronText">Dedecahedron</span>
+      </button>
+      <button id="icosahedron" class="btn shapeBtn">
+        <img class="polyhedronIcon" src="icons/icosahedron.svg"
+             alt="icosahedron">
+        <span class="polyhedronText">Icosahedron</span>
+      </button>
+    </section>
+  </body>
+
+</html>
