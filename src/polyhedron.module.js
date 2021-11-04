@@ -3,7 +3,6 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
 import { LineSegmentsGeometry } from "three/examples/jsm/lines/LineSegmentsGeometry";
 import { Wireframe } from "three/examples/jsm/lines/Wireframe";
-import { WireframeGeometry2 } from "three/examples/jsm/lines/WireframeGeometry2";
 
 class Polyhedron {
   constructor(polyhedron, accentColor) {
@@ -79,8 +78,8 @@ class Polyhedron {
     this.renderer.setSize(this.width, this.height);
   };
 
-  updateTheme = (theme) => {
-    this.mesh.material.color.setHex(theme.accentColor.replace("#", "0x"));
+  updateTheme = (color) => {
+    this.mesh.material.color.setHex(color.replace("#", "0x"));
   };
 }
 
