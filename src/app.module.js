@@ -50,16 +50,16 @@ const icosahedron = new Polyhedron(icosahedronGeometry, accentColor);
 
 canva.appendChild(icosahedron.renderer.domElement);
 
-updateCanva = (e) => {
+const updateCanva = (e) => {
   const polyhedron = e.currentTarget.polyhedron;
   canva.childNodes[0].replaceWith(polyhedron.renderer.domElement);
 };
 
-updateTheme = () => {
+const updateTheme = () => {
   switchTheme().then(() => updatePolyhedronTheme());
 };
 
-switchTheme = () => {
+const switchTheme = () => {
   return new Promise((resolve) => {
     if (theme.light) {
       theme.light = false;
