@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" media="(prefers-color-scheme: light)"
-          content="white" />
+          content="#fff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)"
           content="#2f3030" />
     <title>Polyhedra Viewer</title>
@@ -19,33 +19,33 @@
   </head>
 
   <body>
-    <label class="switch">
-      <input tabindex="0" id="themeToggler" type="checkbox">
+    <label for="themeToggler" class="switch">
+      <input tabindex="1" id="themeToggler" name="themeToggler" type="checkbox">
       <span class="slider round">
         <pre>🌙 🌞</pre>
       </span>
     </label>
-    <section id="canva"></section>
+    <section tabindex="-1" id="canva"></section>
     <section id="polyhedronButtons">
-      <button id="tetrahedron" class="btn shapeBtn">
+      <button tabindex="2" id="tetrahedron" class="btn shapeBtn">
         <img class="polyhedronIcon" src="icons/tetrahedron.svg"
              alt="tetrahedron">
         <span class="polyhedronText">Tetrahedron</span>
       </button>
-      <button id="cube" class="btn shapeBtn">
+      <button tabindex="3" id="cube" class="btn shapeBtn">
         <img class="polyhedronIcon" src="icons/cube.svg" alt="cube">
         <span class="polyhedronText">Cube</span>
       </button>
-      <button id="octahedron" class="btn shapeBtn">
+      <button tabindex="4" id="octahedron" class="btn shapeBtn">
         <img class="polyhedronIcon" src="icons/octahedron.svg" alt="octahedron">
         <span class="polyhedronText">Octahedron</span>
       </button>
-      <button id="dodecahedron" class="btn shapeBtn">
+      <button tabindex="5" id="dodecahedron" class="btn shapeBtn">
         <img class="polyhedronIcon" src="icons/dodecahedron.svg"
              alt="dodecahedron">
         <span class="polyhedronText">Dedecahedron</span>
       </button>
-      <button id="icosahedron" class="btn shapeBtn">
+      <button tabindex="6" id="icosahedron" class="btn shapeBtn">
         <img class="polyhedronIcon" src="icons/icosahedron.svg"
              alt="icosahedron">
         <span class="polyhedronText">Icosahedron</span>

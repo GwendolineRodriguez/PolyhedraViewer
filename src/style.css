@@ -56,6 +56,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 1em;
   max-width: 100%;
+  margin: 0 1em;
 }
 
 /* The switch - the box around the slider */
@@ -71,8 +72,8 @@ body {
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
-  width: 0;
-  height: 0;
+  width: 3.75em;
+  height: 2.125em;
 }
 
 /* The slider */
@@ -107,7 +108,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 0.0625em #525454;
+  box-shadow: 0 0.5em 3em var(--accent-color);
 }
 
 input:checked + .slider:before {
@@ -129,7 +130,7 @@ input:checked + .slider:before {
   display: none;
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 850px) {
   .btn {
     padding: 0.5em;
   }

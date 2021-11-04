@@ -55,7 +55,7 @@ updateCanva = (e) => {
   canva.childNodes[0].replaceWith(polyhedron.renderer.domElement);
 };
 
-updateTheme = (e) => {
+updateTheme = () => {
   switchTheme().then(() => updatePolyhedronTheme());
 };
 
