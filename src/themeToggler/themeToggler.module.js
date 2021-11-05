@@ -5,17 +5,22 @@ import {
   unselectable,
 } from "./themeToggler.module.css";
 
-class ThemeToggler {
-  constructor(updateStyles) {
+class ThemeToggler extends HTMLElement {
+  constructor() {
+    super();
     this.darkCSS = document.querySelectorAll(
       "link[rel=stylesheet][media*=prefers-color-scheme][media*=dark]"
     );
     this.lightCSS = document.querySelectorAll(
       "link[rel=stylesheet][media*=prefers-color-scheme][media*=light]"
     );
-    this.updateStyles = updateStyles;
     this.darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     this.darkModeOn = this.darkModeMediaQuery.matches;
+  }
+
+  connectedCallback() {
+    this.render();
+    this.init();
   }
 
   init = () => {
@@ -52,7 +57,6 @@ class ThemeToggler {
       link.media = "not all";
       link.disabled = true;
     });
-    this.updateStyles(this.getAccentColor());
   };
 
   activateLightMode = () => {
@@ -66,7 +70,6 @@ class ThemeToggler {
       link.media = "not all";
       link.disabled = true;
     });
-    this.updateStyles(this.getAccentColor());
   };
 
   toggleTheme = () => {
@@ -77,12 +80,9 @@ class ThemeToggler {
     }
   };
 
-  getAccentColor = () =>
-    getComputedStyle(document.body).getPropertyValue("--accent-color");
-
-  get component() {
+  render = () => {
     const html = String.raw;
-    return html`
+    this.innerHTML = html`
       <label for="themeToggler" class="${toggler}">
         <input
           tabindex="1"
@@ -96,7 +96,7 @@ class ThemeToggler {
         </span>
       </label>
     `;
-  }
+  };
 }
 
-export default ThemeToggler;
+customElements.define("theme-toggler", ThemeToggler);

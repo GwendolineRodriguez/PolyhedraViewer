@@ -1,21 +1,16 @@
-/* The switch - the box around the slider */
 .toggler {
   position: relative;
   display: inline-block;
-  justify-self: end;
-  margin: 0 1em;
   width: 3.75em;
   height: 2.125em;
 }
 
-/* Hide default HTML checkbox */
 .toggler input {
   opacity: 0;
   width: 3.75em;
   height: 2.125em;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -39,7 +34,6 @@
   left: 0.25em;
   bottom: 0.25em;
   background-color: white;
-  background-image: "r";
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -48,8 +42,12 @@ input:checked + .slider {
   background-color: #525454;
 }
 
+input:focus:checked + .slider {
+  box-shadow: 0 0.5em 2em -0.2em #fff;
+}
+
 input:focus + .slider {
-  box-shadow: 0 0.5em 3em var(--accent-color);
+  box-shadow: 0 0.5em 2em #003bfc;
 }
 
 input:checked + .slider:before {
@@ -58,7 +56,6 @@ input:checked + .slider:before {
   transform: translateX(1.625em);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 2.125em;
 }
@@ -73,6 +70,5 @@ input:checked + .slider:before {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
   user-select: none;
 }

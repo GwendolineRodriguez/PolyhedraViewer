@@ -17,9 +17,13 @@
           media="(prefers-color-scheme: dark)" />
     <link rel="stylesheet" href="style.css" />
     <script src="app.module.js" type="module"></script>
+    <script src="themeToggler/themeToggler.module.js" type="module"></script>
   </head>
 
   <body>
+    <menu>
+      <theme-toggler></theme-toggler>
+    </menu>
     <section tabindex="-1" id="canva"></section>
     <section id="polyhedronButtons">
       <button tabindex="2" id="tetrahedron" class="btn shapeBtn">
