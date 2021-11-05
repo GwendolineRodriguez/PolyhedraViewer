@@ -12,8 +12,8 @@ const icosaHedronBtn = document.getElementById("icosahedron");
 class App {
   constructor() {
     this.initTheme();
-    this.createPolyhedra(16);
-    this.initCanva();
+    // this.createPolyhedra(16);
+    // this.initCanva();
   }
 
   initTheme = () => {
