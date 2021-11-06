@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import Polyhedron from "./polyhedron.module";
-import ThemeToggler from "./themeToggler/themeToggler.module";
 
+const themeToggler = document.querySelector("theme-toggler");
 const canva = document.getElementById("canva");
 const tetrahedronBtn = document.getElementById("tetrahedron");
 const cubeBtn = document.getElementById("cube");
@@ -17,11 +17,13 @@ class App {
   }
 
   initTheme = () => {
-    this.themeToggler = new ThemeToggler(this.updatePolyhedronTheme);
-    this.accentColor = this.themeToggler.getAccentColor();
-    document.body.insertAdjacentHTML("afterbegin", this.themeToggler.component);
-    this.themeToggler.init();
+    themeToggler.addEventListener("change", () => {
+      this.updatePolyhedronTheme();
+    });
   };
+
+  getAccentColor = () =>
+    getComputedStyle(document.body).getPropertyValue("--accent-color");
 
   updateCanva = (e) => {
     const polyhedron = e.currentTarget.polyhedron;
@@ -47,7 +49,7 @@ class App {
       polyhedronSize,
       0
     );
-
+    this.accentColor = this.getAccentColor();
     this.tetrahedron = new Polyhedron(tetrahedronGeometry, this.accentColor);
     this.cube = new Polyhedron(cubeGeometry, this.accentColor);
     this.octahedron = new Polyhedron(octahedronGeometry, this.accentColor);
@@ -72,7 +74,7 @@ class App {
   };
 
   updatePolyhedronTheme = () => {
-    const color = this.themeToggler.getAccentColor();
+    const color = this.getAccentColor();
     this.tetrahedron.updateTheme(color);
     this.cube.updateTheme(color);
     this.octahedron.updateTheme(color);

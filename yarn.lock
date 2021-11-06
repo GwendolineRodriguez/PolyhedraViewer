@@ -221,6 +221,11 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
+"@galpop/themetoggler@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@galpop/themetoggler/-/themetoggler-1.1.1.tgz#7d41e7c35079e92496332583179b9345fc722de1"
+  integrity sha512-RdbRzk5K1179hA2/w8yzxHewrSkTt123GpCm+SYHaqEzbc9a/Ls7zTbvp7Lvaham/9GmreJh6eWfdmymuiKoGA==
+
 "@iarna/toml@^2.2.0":
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
