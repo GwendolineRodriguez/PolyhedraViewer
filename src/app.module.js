@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import Polyhedron from "./polyhedron.module";
 
+const themeToggler = document.querySelector("theme-toggler");
 const canva = document.getElementById("canva");
 const tetrahedronBtn = document.getElementById("tetrahedron");
 const cubeBtn = document.getElementById("cube");
@@ -11,9 +12,16 @@ const icosaHedronBtn = document.getElementById("icosahedron");
 class App {
   constructor() {
     this.accentColor = this.getAccentColor();
-    // this.createPolyhedra(16);
-    // this.initCanva();
+    this.initTheme();
+    this.createPolyhedra(16);
+    this.initCanva();
   }
+
+  initTheme = () => {
+    themeToggler.addEventListener("input", () => {
+      this.updatePolyhedronTheme();
+    });
+  };
 
   getAccentColor = () =>
     getComputedStyle(document.body).getPropertyValue("--accent-color");
