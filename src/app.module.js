@@ -11,14 +11,13 @@ const icosaHedronBtn = document.getElementById("icosahedron");
 
 class App {
   constructor() {
-    this.accentColor = this.getAccentColor();
     this.initTheme();
     this.createPolyhedra(16);
     this.initCanva();
   }
 
   initTheme = () => {
-    themeToggler.addEventListener("input", () => {
+    themeToggler.addEventListener("change", () => {
       this.updatePolyhedronTheme();
     });
   };
@@ -50,7 +49,7 @@ class App {
       polyhedronSize,
       0
     );
-
+    this.accentColor = this.getAccentColor();
     this.tetrahedron = new Polyhedron(tetrahedronGeometry, this.accentColor);
     this.cube = new Polyhedron(cubeGeometry, this.accentColor);
     this.octahedron = new Polyhedron(octahedronGeometry, this.accentColor);
