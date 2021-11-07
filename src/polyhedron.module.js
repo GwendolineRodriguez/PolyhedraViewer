@@ -77,10 +77,6 @@ class Polyhedron {
 
     this.renderer.setSize(this.width, this.height);
   };
-
-  updateTheme = (color) => {
-    this.mesh.material.color.setHex(color.replace("#", "0x"));
-  };
 }
 
 export default Polyhedron;
