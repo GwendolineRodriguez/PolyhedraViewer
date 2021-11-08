@@ -10,7 +10,7 @@ class Polyhedron {
     this.geometry = polyhedron;
     this.accentColor = parseInt(accentColor.replace("#", "0x"));
     this.colors = colors;
-    this.width = window.innerWidth - 80;
+    this.width = window.innerWidth;
     this.height = window.innerHeight * 0.7;
     this.viewAngle = 35;
     this.nearClippingPane = 1;
@@ -71,7 +71,7 @@ class Polyhedron {
   };
 
   onWindowResize = () => {
-    this.width = window.innerWidth - 80;
+    this.width = window.innerWidth;
     this.height = window.innerHeight * 0.7;
 
     this.camera.aspect = this.width / this.height;
