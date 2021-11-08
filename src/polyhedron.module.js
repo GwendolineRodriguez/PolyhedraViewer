@@ -1,13 +1,15 @@
 import * as THREE from "three";
+import { Color } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
 import { LineSegmentsGeometry } from "three/examples/jsm/lines/LineSegmentsGeometry";
 import { Wireframe } from "three/examples/jsm/lines/Wireframe";
 
 class Polyhedron {
-  constructor(polyhedron, accentColor) {
+  constructor(polyhedron, accentColor, colors) {
     this.geometry = polyhedron;
     this.accentColor = parseInt(accentColor.replace("#", "0x"));
+    this.colors = colors;
     this.width = window.innerWidth - 80;
     this.height = window.innerHeight * 0.7;
     this.viewAngle = 35;
@@ -76,6 +78,15 @@ class Polyhedron {
     this.camera.updateProjectionMatrix();
 
     this.renderer.setSize(this.width, this.height);
+  };
+
+  updateTheme = () => {
+    const lightColor = new Color(this.colors.light);
+    if (this.mesh.material.color.equals(lightColor)) {
+      this.mesh.material.color.setHex(this.colors.dark.replace("#", "0x"));
+    } else {
+      this.mesh.material.color.setHex(this.colors.light.replace("#", "0x"));
+    }
   };
 }
 

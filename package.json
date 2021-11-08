@@ -10,7 +10,7 @@
     "parcel": "^2.0.0"
   },
   "dependencies": {
-    "@galpop/themetoggler": "^1.1.1",
+    "@galpop/themetoggler": "^1.1.2",
     "three": "^0.134.0"
   }
 }
