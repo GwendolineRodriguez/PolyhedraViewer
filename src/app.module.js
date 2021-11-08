@@ -11,13 +11,20 @@ const icosaHedronBtn = document.getElementById("icosahedron");
 
 class App {
   constructor() {
-    this.accentColor = "#000";
+    this.initTheme();
     this.createPolyhedra(16);
     this.initCanva();
   }
 
-  getAccentColor = () =>
-    getComputedStyle(document.body).getPropertyValue("--accent-color");
+  initTheme = () => {
+    this.colors = {
+      light: "#5859ff",
+      dark: "#42c996",
+    };
+    themeToggler.addEventListener("input", () => {
+      this.updatePolyhedronTheme();
+    });
+  };
 
   updateCanva = (e) => {
     const polyhedron = e.currentTarget.polyhedron;
@@ -43,12 +50,32 @@ class App {
       polyhedronSize,
       0
     );
-    this.tetrahedron = new Polyhedron(tetrahedronGeometry, this.accentColor);
-    this.cube = new Polyhedron(cubeGeometry, this.accentColor);
-    this.octahedron = new Polyhedron(octahedronGeometry, this.accentColor);
-    this.dodecahedron = new Polyhedron(dodecahedronGeometry, this.accentColor);
-    this.icosahedron = new Polyhedron(icosahedronGeometry, this.accentColor);
+    this.accentColor = this.getAccentColor();
+    this.tetrahedron = new Polyhedron(
+      tetrahedronGeometry,
+      this.accentColor,
+      this.colors
+    );
+    this.cube = new Polyhedron(cubeGeometry, this.accentColor, this.colors);
+    this.octahedron = new Polyhedron(
+      octahedronGeometry,
+      this.accentColor,
+      this.colors
+    );
+    this.dodecahedron = new Polyhedron(
+      dodecahedronGeometry,
+      this.accentColor,
+      this.colors
+    );
+    this.icosahedron = new Polyhedron(
+      icosahedronGeometry,
+      this.accentColor,
+      this.colors
+    );
   };
+
+  getAccentColor = () =>
+    getComputedStyle(document.body).getPropertyValue("--accent-color");
 
   initCanva = () => {
     tetrahedronBtn.polyhedron = this.tetrahedron;
@@ -64,6 +91,14 @@ class App {
     dodecahedronBtn.addEventListener("click", this.updateCanva);
 
     canva.appendChild(this.icosahedron.renderer.domElement);
+  };
+
+  updatePolyhedronTheme = () => {
+    this.tetrahedron.updateTheme();
+    this.cube.updateTheme();
+    this.octahedron.updateTheme();
+    this.dodecahedron.updateTheme();
+    this.icosahedron.updateTheme();
   };
 }
 
