@@ -24,13 +24,13 @@ body {
 body {
   display: grid;
   background-color: var(--background-color);
-  padding: 2em 1em;
-  justify-content: space-around;
+  padding: 2em 0;
 }
 
 menu {
   display: flex;
   justify-content: flex-end;
+  padding: 0 1em;
 }
 
 .btn {
@@ -63,7 +63,7 @@ menu {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 1em;
   max-width: 100%;
-  padding: 1em 0;
+  padding: 1em 1em;
 }
 
 .polyhedronIcon {
